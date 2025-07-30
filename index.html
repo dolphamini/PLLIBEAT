@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- favicon -->
+<link rel="icon" type="image/png" href="images/icon-192.png">
+
+<!-- iOS 홈화면용 아이콘 -->
+<link rel="apple-touch-icon" href="images/icon-192.png">
+
+<!-- Android / PWA 용 manifest -->
+<link rel="manifest" href="manifest.json">
+
+<!-- 상태바 색상 (모바일) -->
+<meta name="theme-color" content="#000000">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>네온 사이버펑크 리듬게임</title>
+  <!-- 미래적 폰트 -->
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+  <style>
+    /* Remove or comment out the global body background for game-specific backgrounds */
+    /* body {
+      background-image: url('bg/왜요배경.PNG');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    } */
+    #background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+      z-index: 0;
+      pointer-events: none;
+    }
+    #game-background {
+      position: relative; /* ensure layering works */
+      background: none;   /* default: no background */
+    }
+   
+  </style>
+  <!-- 로딩 -->
+  <div id="loading">
+    <div id="loading-inner">
+      <h2>로딩 중...</h2>
+      <div id="loading-bar-bg"><div id="loading-bar"></div></div>
+      <span id="loading-text">0%</span>
+    </div>
+  </div>
+  <!-- 곡 선택 (세로 카드 스택) -->
+  <div id="song-select-v" style="display:none;">
+    <div id="bg-particles"></div>
+    <div id="song-list"></div>
+    <div class="nav-btns">
+      <button id="prev-btn">▲</button>
+      <button id="next-btn">▼</button>
+    </div>
+    <button id="start-btn">START</button>
+  </div>
+  <!-- 카운트다운 -->
+  <div id="countdown" style="display:none;">
+    <span id="countdown-num"></span>
+  </div>
+  <!-- 게임 화면 -->
+  <div id="game" style="display:none;">
+    <div id="game-background" class="why-bg">
+      <video id="background-video" autoplay muted loop playsinline></video>
+      <img id="combo-character" src="ch/eunho.PNG" alt="Combo Character" style="display:none;">
+    </div>
+    <div id="score-bar">
+      <span id="score">점수: 0</span>
+      <span id="combo">콤보: 0</span>
+      <span id="hp">체력: 100</span>
+    </div>
+    <div id="progress-bar"><div id="progress"></div></div>
+    <div id="lanes">
+      <div class="lane" data-lane="0"></div>
+      <div class="lane" data-lane="1"></div>
+      <div class="lane" data-lane="2"></div>
+      <div class="lane" data-lane="3"></div>
+    </div>
+    <div id="judgement"></div>
+    <div id="touch-keys">
+      <button class="touch-key" data-lane="0"></button>
+      <button class="touch-key" data-lane="1"></button>
+      <button class="touch-key" data-lane="2"></button>
+      <button class="touch-key" data-lane="3"></button>
+    </div>
+  </div>
+  <audio id="bgm" preload="auto"></audio>
+  <!-- 결과창 -->
+  <div id="result-modal" style="display:none;">
+    <div id="result-bg"></div>
+    <div id="result-card">
+      <img id="result-cover" src="">
+      <div class="result-info">
+        <div class="result-title"></div>
+        <div class="result-artist"></div>
+      </div>
+      <div class="result-score">
+        <span id="score-label">SCORE</span>
+        <span id="score-num">0</span>
+      </div>
+      <div class="result-detail">
+        <div><span>PERFECT</span><span id="perfect-num">0</span></div>
+        <div><span>GREAT</span><span id="great-num">0</span></div>
+        <div><span>GOOD</span><span id="good-num">0</span></div>
+        <div><span>MISS</span><span id="miss-num">0</span></div>
+        <div><span>MAX COMBO</span><span id="combo-num">0</span></div>
+      </div>
+      <div class="result-rank" id="result-rank">S</div>
+      <div class="result-btns">
+        <button id="retry-btn">RETRY</button>
+        <button id="select-btn" onclick="location.reload()">SELECT SONG</button>
+        <button id="share-btn">SHARE</button>
+      </div>
+      <div class="share-tip">
+        트위터 공유 후 이미지를 첨부하려면<br>
+        아래 결과 이미지를 길게 눌러 저장하세요!
+      </div>
+    </div>
+  </div>
+  <script src="songs.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
