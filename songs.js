@@ -10,9 +10,9 @@ window.songList = [
     artist: "PLAVE",
     difficulty: "easy",
     bpm: 100,
-    audioFile: "songs/why.mp3",  
-    videoBackground: "videos/why.mp4",     // 배경 영상 파일 경로
-    albumCover: "images/why.png",      // 앨범 커버 이미지 경로
+    audioFile: "why.mp3",  
+    videoBackground: "why.mp4",     // 배경 영상 파일 경로
+    albumCover: "why.png",      // 앨범 커버 이미지 경로
     "notes": [
     {
       "time": 742,
@@ -1622,9 +1622,9 @@ window.songList = [
     artist: "PLAVE",
     difficulty: "normal",
     bpm: 127,
-    videoBackground: "videos/way4luv.mp4",
-    audioFile: "songs/웨이포럽.mp3",
-    albumCover: "images/WAY 4 LUV.png",
+    videoBackground: "way4luv.mp4",
+    audioFile: "웨이포럽.mp3",
+    albumCover: "WAY 4 LUV.png",
     "notes": [
     {
       "time": 1399,
@@ -4274,9 +4274,9 @@ window.songList = [
     artist: "PLAVE",
     difficulty: "hard",
     bpm: 180,
-    audioFile: "songs/육여름.mp3",
-    videoBackground: "videos/육여름.mp4",
-    albumCover: "images/The_6th_Summer.png",
+    audioFile: "육여름.mp3",
+    videoBackground: "육여름.mp4",
+    albumCover: "The_6th_Summer.png",
    "notes": [
     {
       "time": 1715,
@@ -5394,9 +5394,9 @@ window.songList = [
     artist: "PLAVE",
     difficulty: "easy",
     bpm:92,
-    videoBackground: "videos/카쿠렌보.mp4",
-    audioFile: "songs/카쿠렌보.mp3",
-    albumCover: "images/카쿠렌보.png",
+    videoBackground: "카쿠렌보.mp4",
+    audioFile: "카쿠렌보.mp3",
+    albumCover: "카쿠렌보.png",
     "notes": [
     {
       "time": 8668,
@@ -6926,9 +6926,9 @@ window.songList = [
   artist: "PLAVE",
   difficulty: "normal",
   bpm: 98,
-  videoBackground: "videos/기다릴게.mp4",
-  audioFile: "songs/기다릴게.mp3",
-  albumCover: "images/기다릴게.png",
+  videoBackground: "기다릴게.mp4",
+  audioFile: "기다릴게.mp3",
+  albumCover: "기다릴게.png",
   "notes": [
     {
       "time": 254,
@@ -9498,9 +9498,9 @@ window.songList = [
     artist: "PLAVE",
     difficulty: "normal",
     bpm: 103,
-    videoBackground: "videos/대시.mp4",
-    audioFile: "songs/대시.mp3",
-    albumCover: "images/대시.Png",
+    videoBackground: "대시.mp4",
+    audioFile: "대시.mp3",
+    albumCover: "대시.Png",
    "notes": [
     {
       "time": 2272,
